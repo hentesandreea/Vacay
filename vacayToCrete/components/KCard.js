@@ -1,11 +1,13 @@
-import {View, Text, TextInput, Button} from "react-native";
+import {View, Text, TextInput, Button, TouchableOpacity} from "react-native";
 import ImgSlider from "./ImgSlider";
 import KSpacer from "./KSpacer";
 import {useState} from "react";
-import KSent from "./KSent";
 
 const KCard = ({hotel, stars, descrp}) => {
     const [numb, setNumb] = useState(0)
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [isButtonActive, setIsButtonActive] = useState(true)
     return(
         <View style={{width:'90%', borderRadius:10, backgroundColor:'white', padding:10}}>
 
@@ -28,12 +30,20 @@ const KCard = ({hotel, stars, descrp}) => {
             <KSpacer h={6}/>
             <View style={{flexDirection:'row', gap:6}}>
                 <Text style={{fontSize:16, fontWeight:'500'}}>Start date:</Text>
-                <TextInput style={{backgroundColor:'white', borderRadius:10,borderWidth:0.4, width:'50%', padding:4}}/>
+                <TextInput
+                    placeholder="Start date"
+                    value={startDate}
+                    onChangeText={text => setStartDate(text)}
+                    style={{backgroundColor:'white', borderRadius:10,borderWidth:0.4, width:'50%', padding:4}} i/>
             </View>
             <KSpacer h={6}/>
             <View style={{flexDirection:'row', gap:6}}>
                 <Text style={{fontSize:16, fontWeight:'500'}}>End date:</Text>
-                <TextInput style={{backgroundColor:'white', borderRadius:10, borderWidth:0.4, width:'50%', padding:4}}/>
+                <TextInput
+                    placeholder={"End date"}
+                    value={endDate}
+                    onChangeText={text => setEndDate(text)}
+                    style={{backgroundColor:'white', borderRadius:10, borderWidth:0.4, width:'50%', padding:4}}/>
             </View>
             <KSpacer h={10}/>
            <Text style={{fontSize:16, fontWeight:'500'}}>Number of people:</Text>
@@ -43,7 +53,18 @@ const KCard = ({hotel, stars, descrp}) => {
                     <Text style={{fontSize:16, fontWeight:'500'}}>{numb}</Text>
                     <Button title={'+'} onPress={() => setNumb(numb + 1)} color={'black'}/>
                 </View>
-                <KSent/>
+                <TouchableOpacity  onPress={() => {
+                    if (startDate !== '' && endDate !== '' && numb !== 0) {
+                        setIsButtonActive(false)
+                        alert('An offer was sent by e-mail.')
+                    } else {
+                     alert('Fields are not completed!')
+                    }
+                }}
+                                   disabled={!isButtonActive}
+                                  style={{backgroundColor: "#365486", borderRadius:10, padding:10}}>
+                    <Text style={{fontSize:16, fontWeight:'600',color:'white'}}>Recieve offer</Text>
+                </TouchableOpacity>
             </View>
 
 
