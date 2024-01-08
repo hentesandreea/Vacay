@@ -1,4 +1,4 @@
-import {View, TextInput, Text, TouchableOpacity, ImageBackground} from "react-native";
+import {View, TextInput, Text, TouchableOpacity, ImageBackground, Button} from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import {useState} from "react";
 import KSpacer from "../components/KSpacer";
@@ -14,7 +14,7 @@ function Register(){
         <View style={{flex:1}}>
             <ImageBackground source={image} resizeMode="cover" style={{ flex:1, justifyContent: 'center',alignItems:'center'}} blurRadius={2}>
             <View style={{borderRadius:10, backgroundColor:'#DCF2F1', padding:20, justifyContent:'center', width:'90%', alignItems:'center', shadowOpacity:0.3}}>
-                <Text style={{fontSize:18, fontWeight:'600',flexWrap:'wrap'}}>Find a place for your vacay☀️</Text>
+                <Text style={{fontSize:18, fontWeight:'600',flexWrap:'wrap'}}>Find a place for your holiday☀️</Text>
                 <KSpacer h={40}/>
                 <TextInput
                     placeholder={'Email'}
@@ -42,6 +42,14 @@ function Register(){
                                   style={{backgroundColor: "#365486", borderRadius:10, padding:18, width:'60%',alignItems:'center', shadowOpacity:0.1}}>
                     <Text style={{fontSize:18, fontWeight:'600', color:'white'}}>Register</Text>
                 </TouchableOpacity>
+                <KSpacer h={20}/>
+                <View style={{flexDirection:'row', gap: 3, alignItems:'center'}}>
+                    <Text style={{color:'grey',fontSize:16, fontWeight:'500'}}>Already have an account?</Text>
+                  <TouchableOpacity onPress={() => navigator.navigate('Login')}>
+                      <Text style={{fontSize:16, fontWeight:'600', textDecorationLine:'underline', color:'grey'}}>Login</Text>
+                  </TouchableOpacity>
+
+                </View>
             </View>
             </ImageBackground>
         </View>
