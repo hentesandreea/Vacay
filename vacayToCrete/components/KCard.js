@@ -2,6 +2,9 @@ import {View, Text, TextInput, Button, TouchableOpacity} from "react-native";
 import ImgSlider from "./ImgSlider";
 import KSpacer from "./KSpacer";
 import {useState} from "react";
+import KButton from "./KButton";
+import KButtonMap from "./KButtonMap";
+
 
 const KCard = ({hotel, stars, descrp}) => {
     const [numb, setNumb] = useState(0)
@@ -9,10 +12,8 @@ const KCard = ({hotel, stars, descrp}) => {
     const [endDate, setEndDate] = useState('');
     const [isButtonActive, setIsButtonActive] = useState(true)
     return(
-        <View style={{width:'90%', borderRadius:10, backgroundColor:'white', padding:10}}>
-
+        <View style={{width:'100%', borderRadius:10, backgroundColor:'white', padding:10}}>
                 <ImgSlider/>
-
             <View style={{flexDirection:'row', gap: 10}}>
                 <Text style={{fontSize:18,fontWeight: 'bold'}}>{hotel}</Text>
                 <Text style={{fontSize:18, fontWeight:'bold'}}>{stars}⭐</Text>
@@ -47,10 +48,11 @@ const KCard = ({hotel, stars, descrp}) => {
             </View>
             <KSpacer h={10}/>
            <Text style={{fontSize:16, fontWeight:'500'}}>Number of people:</Text>
+            <KSpacer h={8}/>
             <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                 <View style={{flexDirection:'row', gap:16, alignItems:'center'}}>
                    <Button title={'-'} onPress={() => setNumb(Math.max(numb - 1, 0))} color={'black'}/>
-                    <Text style={{fontSize:16, fontWeight:'500'}}>{numb}</Text>
+                    <Text style={{fontSize:17, fontWeight:'500'}}>{numb}</Text>
                     <Button title={'+'} onPress={() => setNumb(numb + 1)} color={'black'}/>
                 </View>
                 <TouchableOpacity  onPress={() => {
@@ -62,12 +64,14 @@ const KCard = ({hotel, stars, descrp}) => {
                     }
                 }}
                                    disabled={!isButtonActive}
-                                  style={{backgroundColor: "#365486", borderRadius:10, padding:10}}>
+                                  style={{backgroundColor: "#365486", borderRadius:10, padding:12}}>
                     <Text style={{fontSize:16, fontWeight:'600',color:'white'}}>Recieve offer</Text>
                 </TouchableOpacity>
             </View>
-
-
+            <KSpacer h={20}/>
+            <View style={{alignItems:'center'}}>
+                <KButtonMap/>
+            </View>
         </View>
     )
 }

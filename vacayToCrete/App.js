@@ -6,6 +6,7 @@ import Airbnbs from "./screens/Airbnbs";
 import Villas from "./screens/Villas";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
+import Map from "./screens/Map";
 
 const Stack = createNativeStackNavigator()
 
@@ -16,6 +17,7 @@ function StackNav(){
           <Stack.Screen name={'Login'} component={Login} options={{headerShown:false}}/>
         <Stack.Screen name={'Landing'} component={Landing} options={{headerShown:false}}/>
         <Stack.Screen name={'Hotels'} component={Hotels} options={{headerShown:false}}/>
+          <Stack.Screen name={'Map'} component={Map} options={{headerShown:false}}/>
           <Stack.Screen name={'Airbnbs'} component={Airbnbs} options={{headerShown:false}}/>
           <Stack.Screen name={'Villas'} component={Villas} options={{headerShown:false}}/>
       </Stack.Navigator>

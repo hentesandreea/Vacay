@@ -3,12 +3,12 @@ import KSpacer from "../components/KSpacer";
 import KCard from "../components/KCard";
 
 const cards =[{
-    hotel:'Atoss',
+    hotel:'Olive Garden Hotel',
     stars:'4',
     descrp:'Located in beautiful Iraklio is perfect for familes.'},
     {
-    hotel:'Meral',
-        stars:'5',
+    hotel:'Samaria Hotel',
+        stars:'4',
         descrp:'Located in beautiful and full of history Chania is perfect for familes.'
 }]
 
@@ -17,7 +17,7 @@ function Hotels({navigation}){
     return(
         <View style={{flex:1,backgroundColor:'#DCF2F1'}}>
             <KSpacer h={20}/>
-            <View style={{justifyContent:'flex-start', padding:20}}>
+            <View style={{justifyContent:'flex-start', padding:30}}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={{uri:'https://static-00.iconduck.com/assets.00/arrow-left-icon-2048x1433-le08mlmd.png'}}
                            style={{height:20, width:34}}/>
@@ -31,7 +31,7 @@ function Hotels({navigation}){
                     cards.map(card =>
                     <>
                     <KCard hotel={card.hotel} descrp={card.descrp} stars={card.stars}/>
-                        <KSpacer h={20}/>
+                        <KSpacer h={30}/>
                     </>
                     )
                 }

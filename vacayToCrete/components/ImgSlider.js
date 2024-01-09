@@ -3,11 +3,12 @@ import { View, Image, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 
+
 const images = [
-    'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvdGVsfGVufDB8fDB8fHww',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLbWZGJPHFMVXLklHymwl_ENgNbR20VJY6_Q&usqp=CAU',
-    'https://images.unsplash.com/photo-1598395927056-8d895e701c3b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZWNlfGVufDB8fDB8fHww',
-];
+    'https://cf.bstatic.com/xdata/images/hotel/max1280x900/78912313.jpg?k=be7b847a12761fb85acdc4df061d25a7de4b78f665ad1d2234fb03f48c804575&o=&hp=1',
+    ' https://cf.bstatic.com/xdata/images/hotel/max1280x900/221879884.jpg?k=826b8bc566a06d218b814b4e7787642a950e7eb6750fe778a4a7a233a355557b&o=&hp=1',
+    'https://cf.bstatic.com/xdata/images/hotel/max1280x900/78913072.jpg?k=823cd1e8f3e505c6356d8f2c863fe059878e8f86c27cab3776b304b38bfa37e4&o=&hp=1'
+]
 const ImgSlider = () => {
     return (
         <Swiper style={styles.wrapper} showsButtons={false}>
