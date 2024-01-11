@@ -20,7 +20,7 @@ function Map({navigation}){
                 }}
             >
                 <Marker coordinate={{latitude: 35.417416, longitude: 24.530005,latitudeDelta: 0.0922,longitudeDelta: 0.0421}}>
-<Image source={{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_pin_icon_green.svg/800px-Map_pin_icon_green.svg.png'}} style={{width:26, height:38}}/>
+<Image source={{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_pin_icon_green.svg/800px-Map_pin_icon_green.svg.png'}} style={{width:28, height:38}}/>
                 </Marker>
             </MapView>
             </View>
