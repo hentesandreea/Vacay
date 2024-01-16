@@ -1,6 +1,6 @@
 import {View, Text, ScrollView, Image, TouchableOpacity} from "react-native";
 import KSpacer from "../components/KSpacer";
-import KCard from "../components/KCard";
+import KCardHotel from "../components/KCardHotel";
 
 const cards =[{
     hotel:'Olive Garden Hotel',
@@ -23,14 +23,14 @@ function Hotels({navigation}){
                            style={{height:20, width:34}}/>
                 </TouchableOpacity>
             </View>
-            <ScrollView contentContainerStyle={{flexGrow:1, padding:20, alignItems:'center'}}>
-                <KSpacer h={20}/>
+            <ScrollView contentContainerStyle={{flexGrow:1, padding:20}}>
+                <KSpacer h={10}/>
                     <Text style={{fontSize:20,fontWeight:'bold'}}>Recommended Hotels</Text>
-                <KSpacer h={40}/>
+                <KSpacer h={30}/>
                 {
                     cards.map(card =>
                     <>
-                    <KCard hotel={card.hotel} descrp={card.descrp} stars={card.stars}/>
+                    <KCardHotel hotel={card.hotel} descrp={card.descrp} stars={card.stars}/>
                         <KSpacer h={30}/>
                     </>
                     )
